@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>300</x><y>80</y><w>340</w><h>580</h></coordinates><panel_attributes>*Held*
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>300</x><y>80</y><w>430</w><h>580</h></coordinates><panel_attributes>*Held*
 --
 -name: String
 -typ: String
@@ -8,13 +8,13 @@
 -angriffswert: int
 -ruestung: int
 -magieresistenz: int
--bild: Bild
+-bild: ImageIcon
 
 --
 +Held()
 +Held(name: String, typ: String, beschreibung: String, 
 maxLeben: int, aktLeben: int, angriffswert: int, 
-ruestung: int, magieresistenz: int, bild: Bild)
+ruestung: int, magieresistenz: int, bild: ImageIcon)
 +setName(name: String): void
 +getName(): String
 +setTyp(typ: String): void
@@ -31,8 +31,8 @@ ruestung: int, magieresistenz: int, bild: Bild)
 +getRuestung(): int
 +setMagieresistenz(magieresistenz: int): void
 +getMagieresistenz(): int
-+setBild(bild: Bild): void
-+getBild(): Bild
++setBild(bild: ImageIcon): void
++getBild(): ImageIcon
 +angreifen(ziel: Held): void
 +heilen(wert: int): void
 +leiden(schaden: int): void</panel_attributes><additional_attributes></additional_attributes></element></diagram>
