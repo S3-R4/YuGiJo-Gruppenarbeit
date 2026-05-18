@@ -1,3 +1,5 @@
+import javax.swing.ImageIcon;
+
 public class Held {
 	
 	
@@ -11,7 +13,7 @@ public class Held {
 	private int ruestung;
 	private int magieresistenz;
 	
-	private Bild bild;
+	private ImageIcon bild;
 	
 	// Konstruktor
 	public Held() {
@@ -24,12 +26,12 @@ public class Held {
 		angriffswert = 0;
 		ruestung = 0;
 		magieresistenz = 0;
-		bild = new Bild();
+		bild = null;
 	}
 	
 	// Vollparametrisierter Konstruktor
 	public Held(String name, String typ, String beschreibung, 
-				int maxLeben, int angriffswert, int ruestung, int magieresistenz, Bild bild) {
+				int maxLeben, int angriffswert, int ruestung, int magieresistenz, ImageIcon bild) {
 		
 		this.name = name;
 		this.typ = typ;
@@ -137,10 +139,10 @@ public class Held {
 	}
 	
 	
-	public Bild getBild() {
+	public ImageIcon getBild() {
 		return bild;
 	}
-	public void setBild(Bild bild) {
+	public void setBild(ImageIcon bild) {
 		this.bild = bild;
 	}
 	
