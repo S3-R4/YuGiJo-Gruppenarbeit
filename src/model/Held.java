@@ -28,22 +28,30 @@ public class Held {
 		magieresistenz = 0;
 		bild = new ImageIcon();
 	}
+
+    public Held(String name, String typ, String beschreibung, 
+            int maxLeben, int aktLeben, int angriffswert, 
+            int ruestung, int magieresistenz) {
+
+        this.setName(name);
+		this.setTyp(typ);
+		this.setBeschreibung(beschreibung);
+		this.setMaxLeben(maxLeben);
+		this.setAktLeben(aktLeben);
+        this.setAngriffswert(angriffswert);
+		this.setRuestung(ruestung);
+		this.setMagieresistenz(magieresistenz);
+        this.setBild(name); // Die Datei hat denselben Namen wie der Kartenname
+    }
 	
 	// Vollparametrisierter Konstruktor
 	public Held(String name, String typ, String beschreibung, 
-				int maxLeben, int angriffswert, int ruestung, 
-                int magieresistenz, ImageIcon bild) {
-		
-		this.name = name;
-		this.typ = typ;
-		this.beschreibung = beschreibung;
-		this.maxLeben = maxLeben;
-		this.aktLeben = maxLeben;
-		this.angriffswert = angriffswert;
-		this.ruestung = ruestung;
-		this.magieresistenz = magieresistenz;
-		this.bild = bild;
-	}
+            int maxLeben, int aktLeben, int angriffswert, 
+            int ruestung, int magieresistenz, String bild) {
+
+		this(name, typ, beschreibung, maxLeben, aktLeben, angriffswert, ruestung, magieresistenz);
+		this.setBild(bild);
+    }
 	
 	// Methoden
 	
@@ -73,7 +81,7 @@ public class Held {
 	
 	// Getter- und Settermethoden
 	public String getName() {
-		return name;
+		return this.name;
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -81,7 +89,7 @@ public class Held {
 	
 	
 	public String getTyp() {
-		return typ;
+		return this.typ;
 	}
 	public void setTyp(String typ) {
 		this.typ = typ;
@@ -89,7 +97,7 @@ public class Held {
 	
 	
 	public String getBeschreibung() {
-		return beschreibung;
+		return this.beschreibung;
 	}
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
@@ -97,7 +105,7 @@ public class Held {
 	
 	
 	public int getMaxLeben() {
-		return maxLeben;
+		return this.maxLeben;
 	}
 	public void setMaxLeben(int maxLeben) {
 		this.maxLeben = maxLeben;
@@ -109,7 +117,7 @@ public class Held {
 	
 	
 	public int getAktLeben() {
-		return aktLeben;
+		return this.aktLeben;
 	}
 	public void setAktLeben(int aktLeben) {
 		this.aktLeben = aktLeben;
@@ -117,7 +125,7 @@ public class Held {
 	
 	
 	public int getAngriffswert() {
-		return angriffswert;
+		return this.angriffswert;
 	}
 	public void setAngriffswert(int angriffswert) {
 		this.angriffswert = angriffswert;
@@ -125,7 +133,7 @@ public class Held {
 	
 	
 	public int getRuestung() {
-		return ruestung;
+		return this.ruestung;
 	}
 	public void setRuestung(int ruestung) {
 		this.ruestung = ruestung;
@@ -133,7 +141,7 @@ public class Held {
 	
 	
 	public int getMagieresistenz() {
-		return magieresistenz;
+		return this.magieresistenz;
 	}
 	public void setMagieresistenz(int magieresistenz) {
 		this.magieresistenz = magieresistenz;
@@ -141,10 +149,10 @@ public class Held {
 	
 	
 	public ImageIcon getBild() {
-		return bild;
+		return this.bild;
 	}
-	public void setBild(ImageIcon bild) {
-		this.bild = bild;
+	public void setBild(String bildpfad) {
+		this.bild = new ImageIcon(bildpfad);
 	}
 	
     @Override
