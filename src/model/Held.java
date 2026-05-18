@@ -1,3 +1,5 @@
+package model;
+
 import javax.swing.ImageIcon;
 
 public class Held {
