@@ -149,14 +149,14 @@ public class Held {
 	
 	@Override
 	public String toString() {
-		return "Held {" + " Name= '" + name + '\'' + 
-				", Typ= '" + typ + '\'' + 
-				", Aktuelles Leben= " + aktLeben +
-                "/" + maxLeben +
-                ", Angriffswert= " + angriffswert +
-                ", Ruestung= " + ruestung +
-                ", Magieresistenz=" + magieresistenz +
-                '}';
+		return "Held {" + 
+			   "\nName: " + name +
+				"\nTyp: " + typ +
+				"\nLeben: " + aktLeben + "/" + maxLeben +
+                "\nAngriffswert: " + angriffswert +
+                "\nRuestung: " + ruestung +
+                "\nMagieresistenz: " + magieresistenz +
+                "\n}";
 	}
 	
 	
