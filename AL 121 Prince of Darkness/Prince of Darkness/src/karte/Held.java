@@ -32,14 +32,14 @@ public class Held {
 	}
 
     public Held(String name, String typ, String beschreibung, 
-            int maxLeben, int aktLeben, int angriffswert, 
+            int maxLeben, int angriffswert, 
             int ruestung, int magieresistenz) {
 
         this.setName(name);
 		this.setTyp(typ);
 		this.setBeschreibung(beschreibung);
 		this.setMaxLeben(maxLeben);
-		this.setAktLeben(aktLeben);
+		this.setAktLeben(maxLeben);
         this.setAngriffswert(angriffswert);
 		this.setRuestung(ruestung);
 		this.setMagieresistenz(magieresistenz);
@@ -48,15 +48,20 @@ public class Held {
 	
 	// Vollparametrisierter Konstruktor
 	public Held(String name, String typ, String beschreibung, 
-            int maxLeben, int aktLeben, int angriffswert, 
+            int maxLeben, int angriffswert, 
             int ruestung, int magieresistenz, String bild) {
 
-		this(name, typ, beschreibung, maxLeben, aktLeben, angriffswert, ruestung, magieresistenz);
+		this(name, typ, beschreibung, maxLeben, angriffswert, ruestung, magieresistenz);
 		this.setBild(bild);
     }
 	
 	// Methoden
 	
+	// Gibt den Angriffswert fr den Angriff zurck
+	public int angreifen() {
+		return this.angriffswert;
+	}
+
 	// Greift einen anderen Helden an
 	public void angreifen(Held ziel) {
 		ziel.leiden(this.angriffswert);

@@ -8,11 +8,12 @@ public class Karte extends JPanel {
     private Held held;
 
     public Karte(Held held){
-        JPanel p = new JPanel(new BorderLayout(10, 10));
+        this.setHeld(held);
+        this.setLayout(new BorderLayout(10, 10));
 
         //KOPFZEILE
         JPanel kopfzeilePnl = new JPanel(new BorderLayout());
-        p.add(kopfzeilePnl, BorderLayout.NORTH);
+        this.add(kopfzeilePnl, BorderLayout.NORTH);
 
         JLabel heldName = new JLabel(held.getName());
         kopfzeilePnl.add(heldName, BorderLayout.WEST);
@@ -25,7 +26,7 @@ public class Karte extends JPanel {
         //BILD:
         JPanel bildPnl = new JPanel();
         bildPnl.add(new JLabel(held.getBild()));
-        p.add(bildPnl, BorderLayout.CENTER);
+        this.add(bildPnl, BorderLayout.CENTER);
         //ENDE BILD
 
 
@@ -36,7 +37,8 @@ public class Karte extends JPanel {
         infoPnl.add(beschreibung, BorderLayout.NORTH);
 
         //Stats
-        JPanel statsPnl = new JPanel(new BoxLayout(new JPanel(), BoxLayout.Y_AXIS));
+        JPanel statsPnl = new JPanel();
+        statsPnl.setLayout(new BoxLayout(statsPnl, BoxLayout.Y_AXIS));
         JLabel lebenLbl = new JLabel("" + held.getMaxLeben());
         statsPnl.add(lebenLbl);
 
@@ -53,7 +55,7 @@ public class Karte extends JPanel {
         //ENDE INFOPANEL
 
 
-        p.add(infoPnl, BorderLayout.SOUTH);
+        this.add(infoPnl, BorderLayout.SOUTH);
         // Ende Komponenten
     }
 

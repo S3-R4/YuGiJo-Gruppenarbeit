@@ -163,12 +163,12 @@ public class PrinceOfDarkness extends JFrame {
       lbl_lebensverlustLinks.setText("");
       lbl_lebensverlustRechts.setText("");
     }else{
-      //Schaden für linken Held berechnen
+      //Schaden fï¿½r linken Held berechnen
       int schadenLinks = l.getAktLeben();
       l.leiden(r.angreifen());
       schadenLinks -= l.getAktLeben();
       
-      //Schaden für rechten Held berechnen
+      //Schaden fï¿½r rechten Held berechnen
       int schadenRechts = r.getAktLeben();
       r.leiden(l.angreifen());
       schadenRechts -= r.getAktLeben();
@@ -183,7 +183,7 @@ public class PrinceOfDarkness extends JFrame {
       pgb_lebenLinks.setString("(" + lebenspunkteLinks + " / " + l.getMaxLeben() + ")");
       pgb_lebenRechts.setString("(" + lebenspunkteRechts + " / " + r.getMaxLeben() + ")");
 
-      //prüfen ob ein Held besiegt wurde
+      //prï¿½fen ob ein Held besiegt wurde
       if (lebenspunkteLinks <= 0 && lebenspunkteRechts <= 0){
         btn_next.setText("Reset");
         runde = 0;

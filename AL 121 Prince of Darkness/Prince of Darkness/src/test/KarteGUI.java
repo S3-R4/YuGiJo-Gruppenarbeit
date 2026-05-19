@@ -4,11 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-
 import karte.Held;
 import karte.Karte;
 
@@ -40,17 +37,6 @@ public class KarteGUI extends JFrame {
     cp.setLayout(new BorderLayout());
     cp.add(k, BorderLayout.CENTER);
     // Anfang Komponenten
-
-
-    JPanel p = new JPanel(new BorderLayout(10, 10));
-
-    //KOPFZEILE
-    JPanel kopfzeile = new JPanel(new BorderLayout());
-    p.add(kopfzeile, BorderLayout.NORTH);
-
-    JLabel heldName = new JLabel();
-
-
 
 
     // Ende Komponenten
