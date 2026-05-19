@@ -58,7 +58,7 @@ public class Held {
 	 * Ein Standardbild wird automatisch gesetzt.
 	 * 
 	 * @param name Name des Helden
-	 * @param typ Typ/Klasse des Helden
+	 * @param typ Typ des Helden
 	 * @param beschreibung Beschreibung des Helden
 	 * @param maxLeben Maximale Lebenspunkte
 	 * @param angriffswert Angriffsstärke
@@ -69,69 +69,88 @@ public class Held {
             int maxLeben, int angriffswert, 
             int ruestung, int magieresistenz) {
 
+		// Werte mit Setter-Methoden setzen
         this.setName(name);
 		this.setTyp(typ);
 		this.setBeschreibung(beschreibung);
 		this.setMaxLeben(maxLeben);
-		this.setAktLeben(maxLeben);
+		this.setAktLeben(maxLeben);				// Aktuelles Leben startet bei maximalem Leben
         this.setAngriffswert(angriffswert);
 		this.setRuestung(ruestung);
 		this.setMagieresistenz(magieresistenz);
+
+		// Standardbild setzen
         this.setBild("AL 121 Prince of Darkness/Prince of Darkness/bin/bilder/Kitty.jpg"); // Die Datei hat denselben Namen wie der Kartenname
     }
 	
-	// Vollparametrisierter Konstruktor
+	/**
+	 * Vollparametrisierter Konstruktor.
+	 * Erstellt einen Helden mit eigenem Bild.
+	 * 
+	 * @param name Name des Helden
+	 * @param typ Typ
+	 * @param beschreibung Beschreibung
+	 * @param maxLeben Maximale Lebenspunkte
+	 * @param angriffswert Angriffsstärke
+	 * @param ruestung Rüstungswert
+	 * @param magieresistenz Magieresistenz
+	 * @param bild Bildpfad des Helden
+	 */
 	public Held(String name, String typ, String beschreibung, 
             int maxLeben, int angriffswert, 
             int ruestung, int magieresistenz, String bild) {
 
+		// Aufruf des anderen Konstruktors
 		this(name, typ, beschreibung, maxLeben, angriffswert, ruestung, magieresistenz);
-		this.setBild(bild);
+		this.setBild(bild);			// Eigenes Bild setzen
     }
 	
 	// Methoden
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* Gibt den Angriffswert für den Angriff zurück.
 	* 
-	* @return
+	* @return Angriffswert
 	*/
 	public int angreifen() {
 		return this.angriffswert;
 	}
 
 	/**
- 	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
-	* @return
+ 	* Greift einen anderen Helden an.
+	* Der Zielheld verliert Lebenspunkte.
+	* 
+	* @param ziel Angegriffener Held
 	*/
 	public void angreifen(Held ziel) {
-		ziel.leiden(this.angriffswert);
+		ziel.leiden(this.angriffswert);		// Zielheld erhält Schaden
 	}
 
 	/**
-	*
-	* @param
-	* @return
+	* Der Held erhält Schaden.
+	* Die Lebenspunkte werden reduziert.
+	* 
+	* @param schaden Höhe des Schadens
 	*/
-	// Held erhält Schaden
 	public void leiden(int schaden) {
-		aktLeben = aktLeben - schaden;
-		
-		if(aktLeben < 0) {
+		aktLeben = aktLeben - schaden;		// Schaden vom aktuellen Leben abziehen
+
+		// Leben darf nicht kleiner als 0 werden
+		if(aktLeben < 0) {		
 			aktLeben = 0;
 		}
 	}
 
 	/**
+	* Heilt den Helden um einen bestimmten Wert.
 	*
-	* @param
-	* @return
+	* @param wert Heilungswert
 	*/
 	// Held heilt sich
 	public void heilen(int wert) {
-		aktLeben = aktLeben + wert;
-		
+		aktLeben = aktLeben + wert;		// Heilung hinzufügen
+
+		// Leben darf nicht über Maximum steigen
 		if(aktLeben > maxLeben) {
 			aktLeben = maxLeben;
 		}
@@ -141,167 +160,172 @@ public class Held {
 	// Getter- und Settermethoden
 
 	/**
-	*
+	* Gibt den Namen zurück.
 	* 
-	* @return
+	* @return Name des Helden
 	*/
 	public String getName() {
 		return this.name;
 	}
 	/**
+	* Setzt den Namen.
 	*
-	* @param
-	* @return
+	* @param name Neuer Name
 	*/
 	public void setName(String name) {
 		this.name = name;
 	}
 	
 	/**
-	*
+	* Gibt den Typ zurück.
 	* 
-	* @return
+	* @return Typ des Helden
 	*/
 	public String getTyp() {
 		return this.typ;
 	}
 	/**
+	* Setzt den Typ.
 	*
-	* @param
-	* @return
+	* @param typ Neuer Typ
 	*/
 	public void setTyp(String typ) {
 		this.typ = typ;
 	}
 	
 	/**
-	*
+	* Gibt die Beschreibung zurück.
 	* 
-	* @return
+	* @return Beschreibung
 	*/
 	public String getBeschreibung() {
 		return this.beschreibung;
 	}
 	/**
+	* Setzt die Beschreibung.
 	*
-	* @param
-	* @return
+	* @param beschreibung Neue Beschreibung
 	*/
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
 	}
 	
 	/**
-	*
+	* Gibt die maximalen Lebenspunkte zurück.
 	* 
-	* @return
+	* @return Maximales Leben
 	*/
 	public int getMaxLeben() {
 		return this.maxLeben;
 	}
 	/**
+	* Setzt das maximale Leben.
 	*
-	* @param
-	* @return
+	* Falls das aktuelle Leben größer ist,
+	* wird es automatisch angepasst.
+	*
+	* @param maxLeben Neues maximales Leben
 	*/
 	public void setMaxLeben(int maxLeben) {
 		this.maxLeben = maxLeben;
-		
+
+		// Aktuelles Leben begrenzen
 		if (aktLeben > maxLeben) {
 		        aktLeben = maxLeben;
 		}
 	}
 	
 	/**
-	*
-	* 
-	* @return
-	*/
+	 * Gibt das aktuelle Leben zurück.
+	 * 
+	 * @return Aktuelle Lebenspunkte
+	 */
 	public int getAktLeben() {
 		return this.aktLeben;
 	}
 	/**
-	*
-	* @param
-	* @return
-	*/
+	 * Setzt das aktuelle Leben.
+	 * 
+	 * @param aktLeben Neues aktuelles Leben
+	 */
 	public void setAktLeben(int aktLeben) {
 		this.aktLeben = aktLeben;
 	}
 	
 	/**
-	*
-	* 
-	* @return
-	*/
+	 * Gibt den Angriffswert zurück.
+	 * 
+	 * @return Angriffswert
+	 */
 	public int getAngriffswert() {
 		return this.angriffswert;
 	}
 	/**
-	*
-	* @param
-	* @return
-	*/
+	 * Setzt den Angriffswert.
+	 * 
+	 * @param angriffswert Neuer Angriffswert
+	 */
 	public void setAngriffswert(int angriffswert) {
 		this.angriffswert = angriffswert;
 	}
 	
 	/**
-	*
-	* 
-	* @return
-	*/
+	 * Gibt die Rüstung zurück.
+	 * 
+	 * @return Rüstungswert
+	 */
 	public int getRuestung() {
 		return this.ruestung;
 	}
 	/**
-	*
-	* @param
-	* @return
-	*/
+	 * Setzt die Rüstung.
+	 * 
+	 * @param ruestung Neuer Rüstungswert
+	 */
 	public void setRuestung(int ruestung) {
 		this.ruestung = ruestung;
 	}
 	
 	/**
-	*
-	* 
-	* @return
-	*/
+	 * Gibt die Magieresistenz zurück.
+	 * 
+	 * @return Magieresistenz
+	 */
 	public int getMagieresistenz() {
 		return this.magieresistenz;
 	}
 	/**
-	*
-	* @param
-	* @return
-	*/
+	 * Setzt die Magieresistenz.
+	 * 
+	 * @param magieresistenz Neue Magieresistenz
+	 */
 	public void setMagieresistenz(int magieresistenz) {
 		this.magieresistenz = magieresistenz;
 	}
 	
 	/**
-	*
-	* 
-	* @return
-	*/
+	 * Gibt das Bild des Helden zurück.
+	 * 
+	 * @return Bildobjekt
+	 */
 	public ImageIcon getBild() {
 		return this.bild;
 	}
 	/**
-	*
-	* @param
-	* @return
-	*/
+	 * Lädt ein Bild über einen Dateipfad.
+	 * 
+	 * @param bildpfad Pfad zum Bild
+	 */
 	public void setBild(String bildpfad) {
-		this.bild = new ImageIcon(bildpfad);
+		this.bild = new ImageIcon(bildpfad);		// Bild aus Datei laden
 	}
 
 	/**
-	*
-	* 
-	* @return
-	*/
+	 * Gibt alle Informationen des Helden
+	 * als Text zurück.
+	 * 
+	 * @return Informationen des Helden
+	 */
     @Override
 	public String toString() {
 		return "Held {" + 
