@@ -1,4 +1,4 @@
-package model;
+package karte;
 
 import javax.swing.ImageIcon;
 
@@ -43,7 +43,7 @@ public class Held {
         this.setAngriffswert(angriffswert);
 		this.setRuestung(ruestung);
 		this.setMagieresistenz(magieresistenz);
-        this.setBild(name); // Die Datei hat denselben Namen wie der Kartenname
+        this.setBild("AL 121 Prince of Darkness/Prince of Darkness/bin/bilder/Kitty.jpg"); // Die Datei hat denselben Namen wie der Kartenname
     }
 	
 	// Vollparametrisierter Konstruktor
