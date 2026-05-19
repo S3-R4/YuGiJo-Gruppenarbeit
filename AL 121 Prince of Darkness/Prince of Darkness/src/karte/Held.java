@@ -2,6 +2,11 @@ package karte;
 
 import javax.swing.ImageIcon;
 
+/**
+* Die Klasse Held enthählt die Daten eines Heldes.
+* @author Ehsanullah Zaini
+* @version 1.0 from 19.05.2026
+*/
 public class Held {
 	
 	
@@ -17,7 +22,7 @@ public class Held {
 	
 	private ImageIcon bild;
 	
-	// Konstruktor
+	// Parameterloser Konstruktor
 	public Held() {
 		// TODO Auto-generated constructor stub
 		name = "";
@@ -57,16 +62,30 @@ public class Held {
 	
 	// Methoden
 	
-	// Gibt den Angriffswert fr den Angriff zurck
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public int angreifen() {
 		return this.angriffswert;
 	}
 
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	// Greift einen anderen Helden an
 	public void angreifen(Held ziel) {
 		ziel.leiden(this.angriffswert);
 	}
-	
+
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	// Held erhält Schaden
 	public void leiden(int schaden) {
 		aktLeben = aktLeben - schaden;
@@ -75,7 +94,12 @@ public class Held {
 			aktLeben = 0;
 		}
 	}
-	
+
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	// Held heilt sich
 	public void heilen(int wert) {
 		aktLeben = aktLeben + wert;
@@ -87,33 +111,71 @@ public class Held {
 	
 	
 	// Getter- und Settermethoden
+
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public String getName() {
 		return this.name;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setName(String name) {
 		this.name = name;
 	}
 	
-	
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public String getTyp() {
 		return this.typ;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setTyp(String typ) {
 		this.typ = typ;
 	}
 	
-	
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public String getBeschreibung() {
 		return this.beschreibung;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
 	}
 	
-	
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public int getMaxLeben() {
 		return this.maxLeben;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setMaxLeben(int maxLeben) {
 		this.maxLeben = maxLeben;
 		
@@ -122,46 +184,96 @@ public class Held {
 		}
 	}
 	
-	
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public int getAktLeben() {
 		return this.aktLeben;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setAktLeben(int aktLeben) {
 		this.aktLeben = aktLeben;
 	}
 	
-	
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public int getAngriffswert() {
 		return this.angriffswert;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setAngriffswert(int angriffswert) {
 		this.angriffswert = angriffswert;
 	}
 	
-	
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public int getRuestung() {
 		return this.ruestung;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setRuestung(int ruestung) {
 		this.ruestung = ruestung;
 	}
 	
-	
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public int getMagieresistenz() {
 		return this.magieresistenz;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setMagieresistenz(int magieresistenz) {
 		this.magieresistenz = magieresistenz;
 	}
 	
-	
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public ImageIcon getBild() {
 		return this.bild;
 	}
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
 	public void setBild(String bildpfad) {
 		this.bild = new ImageIcon(bildpfad);
 	}
-	
+
+	/**
+	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	* @param
+	* @return
+	*/
     @Override
 	public String toString() {
 		return "Held {" + 
