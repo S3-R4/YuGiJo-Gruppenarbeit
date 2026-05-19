@@ -3,7 +3,12 @@ package karte;
 import javax.swing.ImageIcon;
 
 /**
-* Die Klasse Held enthählt die Daten eines Heldes.
+* Die Klasse Held beschreibt einen spielbaren Helden
+* mit verschiedenen Eigenschaften wie Leben, Angriff,
+* Rüstung und Magieresistenz.
+* 
+* Außerdem besitzt jeder Held ein Bild.
+* 
 * @author Ehsanullah Zaini
 * @version 1.0 from 19.05.2026
 */
@@ -11,31 +16,55 @@ public class Held {
 	
 	
 	// Alle Attribute
-	private String name;
-	private String typ;
-	private String beschreibung;
-	private int maxLeben;
-	private int aktLeben;
-	private int angriffswert;
-	private int ruestung;
-	private int magieresistenz;
+
+	private String name;		// Name des Helden
+	private String typ;			// Typ des Helden
+	private String beschreibung;	// Beschreibung des Helden
+	private int maxLeben;			// Maximale Lebenspunkte
+	private int aktLeben;			// Aktuelle Lebenspunkte
+	private int angriffswert;		// Angriffsstärke des Helden
+	private int ruestung;			// Schutz gegen normalen Schaden
+	private int magieresistenz;		// Schutz gegen magischen Schaden
 	
-	private ImageIcon bild;
+	private ImageIcon bild;			// Bild des Helden
+
+	// Konstruktoren
 	
-	// Parameterloser Konstruktor
+	/**
+	 * Parameterloser Konstruktor.
+	 * Erstellt einen Standard-Helden mit Default-Werten.
+	 */
 	public Held() {
 		// TODO Auto-generated constructor stub
 		name = "";
 		typ = "";
 		beschreibung = "";
+
+		// Standardwerte
 		maxLeben = 100;
 		aktLeben = maxLeben;
+
+		
 		angriffswert = 0;
 		ruestung = 0;
 		magieresistenz = 0;
+
+		// Leeres Bildobjekt
 		bild = new ImageIcon();
 	}
 
+	/**
+	 * Konstruktor ohne Bildpfad.
+	 * Ein Standardbild wird automatisch gesetzt.
+	 * 
+	 * @param name Name des Helden
+	 * @param typ Typ/Klasse des Helden
+	 * @param beschreibung Beschreibung des Helden
+	 * @param maxLeben Maximale Lebenspunkte
+	 * @param angriffswert Angriffsstärke
+	 * @param ruestung Rüstungswert
+	 * @param magieresistenz Magieresistenz
+	 */
     public Held(String name, String typ, String beschreibung, 
             int maxLeben, int angriffswert, 
             int ruestung, int magieresistenz) {
@@ -64,7 +93,7 @@ public class Held {
 	
 	/**
 	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	* 
 	* @return
 	*/
 	public int angreifen() {
@@ -72,17 +101,16 @@ public class Held {
 	}
 
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+ 	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
 	* @param
 	* @return
 	*/
-	// Greift einen anderen Helden an
 	public void angreifen(Held ziel) {
 		ziel.leiden(this.angriffswert);
 	}
 
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -96,7 +124,7 @@ public class Held {
 	}
 
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -113,15 +141,15 @@ public class Held {
 	// Getter- und Settermethoden
 
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public String getName() {
 		return this.name;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -130,15 +158,15 @@ public class Held {
 	}
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public String getTyp() {
 		return this.typ;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -147,15 +175,15 @@ public class Held {
 	}
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public String getBeschreibung() {
 		return this.beschreibung;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -164,15 +192,15 @@ public class Held {
 	}
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public int getMaxLeben() {
 		return this.maxLeben;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -185,15 +213,15 @@ public class Held {
 	}
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public int getAktLeben() {
 		return this.aktLeben;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -202,15 +230,15 @@ public class Held {
 	}
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public int getAngriffswert() {
 		return this.angriffswert;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -219,15 +247,15 @@ public class Held {
 	}
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public int getRuestung() {
 		return this.ruestung;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -236,15 +264,15 @@ public class Held {
 	}
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public int getMagieresistenz() {
 		return this.magieresistenz;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -253,15 +281,15 @@ public class Held {
 	}
 	
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
 	public ImageIcon getBild() {
 		return this.bild;
 	}
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
+	*
 	* @param
 	* @return
 	*/
@@ -270,8 +298,8 @@ public class Held {
 	}
 
 	/**
-	* Held hat die Eigenschaft zu angreifen. Gibt den Angriffswert für den Angriff zurück.
-	* @param
+	*
+	* 
 	* @return
 	*/
     @Override
