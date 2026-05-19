@@ -155,6 +155,8 @@ public class PrinceOfDarkness extends JFrame {
       btn_next.setText("1. Runde");
       lebenspunkteLinks = l.getMaxLeben();
       lebenspunkteRechts= r.getMaxLeben();
+      l.setAktLeben(l.getMaxLeben());
+      r.setAktLeben(r.getAktLeben());
       pgb_lebenLinks.setValue(lebenspunkteLinks);
       pgb_lebenRechts.setValue(0);
       pgb_lebenLinks.setString(lebenspunkteLinks + "");
